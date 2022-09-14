@@ -1,0 +1,8 @@
+from django.shortcuts import render
+from chat.models import *
+
+# Create your views here.
+
+def home(request):
+	chat = ChatMessage.objects.all()
+	return render(request,'common/home.html', {'chat':chat})
